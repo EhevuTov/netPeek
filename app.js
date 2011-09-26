@@ -35,6 +35,12 @@ app.get('/', function(req, res){
   });
 });
 
+app.get('/netstream', function(req, res){
+  res.render('netstream', {
+    title: 'Netstream'
+  });
+});
+
 app.get('/about', function(req, res){
   res.render('about', {
     title: 'About'
