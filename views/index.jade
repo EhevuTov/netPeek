@@ -1,2 +1,18 @@
-h1= title
-p Welcome to #{title}
+!!! 5
+html
+    head
+        title= title
+    body
+        header
+            nav
+                ul
+                    li
+                        a(href="/") Home
+                    li
+                        a(href="/about") About
+                    li
+                        a(href="/contact") Contact 
+
+        h1= title
+
+        p Welcome to #{title}

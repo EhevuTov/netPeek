@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+
 var express = require('express');
 
 var app = module.exports = express.createServer();
@@ -30,7 +31,19 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express'
+    title: 'NetStream'
+  });
+});
+
+app.get('/about', function(req, res){
+  res.render('about', {
+    title: 'About'
+  });
+});
+
+app.get('/contact', function(req, res){
+  res.render('contact', {
+    title: 'Contact'
   });
 });
 
