@@ -1,9 +1,11 @@
-link(href='/stylesheets/netstream.css')
+link(rel='stylesheet', href='/stylesheets/netstream.css')
 script(src='http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js')
 script(src='/javascripts/netstream.js')
 h1= title
 p Welcome to #{title}
 body
-#container
-#dow-jones set Dow Jones Index
-#timed-notifications Start
+    #container
+button
+    #dow-jones set Dow Jones Index
+button
+    #timed-notifications Start
