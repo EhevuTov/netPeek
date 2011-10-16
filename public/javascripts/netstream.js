@@ -38,18 +38,4 @@ function viewResults(results){
 var results = marketStore.query({});
 viewResults(results);
 
-dojo.query("#timed-notifications").onclick(function(){
-    setInterval(function(){
-        var market = data[Math.floor(Math.random() * 3)];
-        market.index += Math.random() - 0.5;
-        market.date = new Date();
-        marketStore.notify(market, market.name);
-    }, 1000); // every second
-    dojo.query("#dow-jones").onclick(function(){
-        var dowJones = marketStore.get("Dow Jones");
-        dowJones.index = parseFloat(prompt("New index for Dow Jones")) || 0;
-        dowJones.date = new Date();
-        marketStore.put(dowJones);
-    });
-});
 });

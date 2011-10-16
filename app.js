@@ -4,7 +4,9 @@
  */
 
 
-var express = require('express');
+var express = require('express' )
+var zmq     = require( 'zeromq' )
+var socket  = require( 'socket.io' )
 
 var app = module.exports = express.createServer();
 
@@ -55,3 +57,19 @@ app.get('/contact', function(req, res){
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+
+// ZeroMQ MSU Subscriber
+console.log( "Subscribing..." )
+sub = zmq.createSocket( 'sub' )
+sub.connect( "tcp://localhost:5000" )
+
+sub.subscribe( '' )
+sub.on( 'message', function (data) {
+  console.log ( data.toString() )
+})
+
+// gracefully exit program
+process.on( 'SIGINT', function() {
+  console.log( "\ngracefully shutting down from SIGINT (Ctrl-C)" )
+  sub.close()
+})
