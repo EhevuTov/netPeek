@@ -33,13 +33,13 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'NetStream'
+    title: 'NetPeek'
   });
 });
 
-app.get('/netstream', function(req, res){
-  res.render('netstream', {
-    title: 'Netstream'
+app.get('/netpeek', function(req, res){
+  res.render('netpeek', {
+    title: 'Netpeek'
   });
 });
 
