@@ -3,12 +3,11 @@
  * Module dependencies.
  */
 
-
 var express = require('express' )
 var zmq     = require( 'zeromq' )
-var socket  = require( 'socket.io' )
 
-var app = module.exports = express.createServer();
+var app = module.exports = express.createServer()
+var io  = require('socket.io').listen(app)
 
 // Configuration
 
@@ -66,6 +65,9 @@ sub.connect( "tcp://localhost:5000" )
 sub.subscribe( '' )
 sub.on( 'message', function (data) {
   console.log ( data.toString() )
+  io.sockets.on( 'connection', function (socket) {
+    socket.emit( 'msu', { hello: 'world' });
+  });
 })
 
 // gracefully exit program
