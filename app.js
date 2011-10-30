@@ -65,9 +65,10 @@ sub.connect( "tcp://localhost:5000" )
 sub.subscribe( '' )
 sub.on( 'message', function (data) {
   console.log ( data.toString() )
-  io.sockets.on( 'connection', function (socket) {
-    socket.emit( 'msu', { hello: 'world' });
-  });
+})
+
+io.sockets.on( 'connection', function (socket) {
+  socket.emit( 'msu', { hello: 'world' });
 })
 
 // gracefully exit program
