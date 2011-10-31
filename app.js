@@ -1,11 +1,7 @@
-
-/**
- * Module dependencies.
- */
+// Module dependencies
 
 var express = require('express' )
 var zmq     = require( 'zeromq' )
-
 var app = module.exports = express.createServer()
 var io  = require('socket.io').listen(app)
 
