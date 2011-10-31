@@ -34,7 +34,7 @@ app.get('/', function(req, res){
 
 app.get('/netpeek', function(req, res){
   res.render('netpeek', {
-    title: 'Netpeek'
+    title: 'NetPeek'
   });
 });
 
