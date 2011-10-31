@@ -62,13 +62,14 @@ console.log( "Subscribing..." )
 sub = zmq.createSocket( 'sub' )
 sub.connect( "tcp://localhost:5000" )
 
+// ZeroMQ set subscribe to all incoming
 sub.subscribe( '' )
-sub.on( 'message', function (data) {
-  console.log ( data.toString() )
-})
 
+// Socket.IO on connect, start sending MSUs from the ZeroMQ sub
 io.sockets.on( 'connection', function (socket) {
-  socket.emit( 'msu', { hello: 'world' });
+  sub.on( 'message', function (data) {
+    socket.emit( 'msu', data.toString() );
+  })
 })
 
 // gracefully exit program
