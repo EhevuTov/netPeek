@@ -1,6 +1,3 @@
-NetPeek
-=======
-
 Description
 -----------
 
@@ -10,11 +7,11 @@ server and a web client
 Web Usage
 ---------
 
-node support/msu_gen.js
-node app.js
+_node support/msu_gen.js_
+_node app.js_
 
 Console Usage
-------------
+-------------
 
-node support/msu_gen.js
-node support/msu_cap.js
+_node support/msu_gen.js_
+_node support/msu_cap.js_
