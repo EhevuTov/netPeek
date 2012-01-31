@@ -1,13 +1,13 @@
 var msuStore;
 
-dojo.require("dojo.store.Memory");
-dojo.require("dojo.store.Observable");
+dojo.require( "dojo.store.Memory" );
+dojo.require( "dojo.store.Observable" );
 
-dojo.ready(function(){
+dojo.ready( function() {
 
   var store;
   // Socket.IO connection
-  var socket = io.connect('http://localhost');
+  var socket = io.connect( 'http://localhost' );
   socket.on( 'msu', function(data) {
     console.log(data);
     store = data;

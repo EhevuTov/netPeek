@@ -15,7 +15,7 @@ function msu(){ return rand( 999,100 ) +
   " " + rand( 99999,0 ) }
 var idInterval = setInterval( function() {publisher.send( msu() )} , 1000)
 
-process.on('SIGINT', function() {
+process.on( 'SIGINT', function() {
   console.log( "\ngracefully shutting down from  SIGINT (Crtl-C)" )
   clearInterval(idInterval)
   publisher.close()
