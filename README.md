@@ -4,14 +4,12 @@ Description
 This is a demo of a realtime phone call generator between a console
 server and a web client
 
-Web Usage
----------
+## Web Usage
 
-_node support/msu_gen.js_
-_node app.js_
+    node support/msu_gen.js
+    node app.js
 
-Console Usage
--------------
+## Console Usage
 
-_node support/msu_gen.js_
-_node support/msu_cap.js_
+    node support/msu_gen.js
+    node support/msu_cap.js
