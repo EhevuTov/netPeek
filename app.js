@@ -2,8 +2,8 @@
 
 var express = require( 'express' )
 var zmq     = require( 'zeromq' )
-var app = module.exports = express.createServer()
-var io  = require( 'socket.io' ).listen(app)
+var app     = module.exports = express.createServer()
+var io      = require( 'socket.io' ).listen(app)
 
 // Configuration
 
@@ -18,6 +18,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.set('view options', { pretty: true });
 });
 
 app.configure('production', function(){
