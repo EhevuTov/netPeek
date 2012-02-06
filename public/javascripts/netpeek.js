@@ -1,9 +1,31 @@
-var msuStore;
-
+dojo.require( "dojo.parser");
 dojo.require( "dojo.store.Memory" );
 dojo.require( "dojo.store.Observable" );
+dojo.require( "dojox.grid.DataGrid" );
+dojo.require( "dojo.data.ItemFileWriteStore" );
+
+var msuStore;
+
+var layout = [
+  {name: 'Index', field: 'id'},
+  {name: 'Date', field: 'date', width: 10}
+];
 
 dojo.ready( function() {
+
+  var storetest = new dojo.data.ItemFileWriteStore({
+    data: {
+        identifier: "id",
+        items: [
+            {id: 1, date: '2010-01-01'},
+            {id: 2, date: '2011-03-04'},
+            {id: 3, date: '2011-03-08'},
+            {id: 4, date: '2007-02-14'},
+            {id: 5, date: '2008-12-26'}
+        ]
+    }
+  });
+  dijit.byId('grid').setStore(storetest);
 
   var store;
   // Socket.IO connection
@@ -14,32 +36,8 @@ dojo.ready( function() {
   });
 
   //create the store with the data
-
   msuStore = new dojo.store.Memory({data: store});
   // wrap the store with Observable to make it possible to monitor:
   msuStore = dojo.store.Observable(msuStore);
-
-  function viewResults(results){
-    var container = dojo.byId("container");
-            var rows = [];
-    function addRow(msu, i){
-        rows.splice(i, 0, dojo.create("div", {
-            innerHTML: msu.name + " index: " + msu.args }, container, i));
-    }
-    function removeRow(i){
-        dojo.destroy(rows.splice(i, 1)[0]);
-    }
-    results.forEach(addRow);
-    results.observe(function(msu, removedFrom, insertedInto){
-        if(removedFrom > -1){
-            removeRow(removedFrom);
-        }
-        if(insertedInto > -1){
-            addRow(msu, insertedInto);
-        }
-    }, true);
-}
-var results = msuStore.query({});
-viewResults(results);
 
 });
