@@ -1,13 +1,18 @@
 link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dijit/themes/claro/claro.css')
+link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dojox/grid/resources/Grid.css')
+link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dojox/grid/resources/claroGrid.css')
 link(rel='stylesheet', href='/stylesheets/netpeek.css')
-script(src='http://ajax.googleapis.com/ajax/libs/dojo/1/dojo/dojo.xd.js')
+script(src='http://ajax.googleapis.com/ajax/libs/dojo/1/dojo/dojo.xd.js', djConfig='parseOnLoad:true')
 script(src='/javascripts/socket.io/socket.io.js')
+
 script(src='/javascripts/netpeek.js')
+
 h1= title
 p Welcome to #{title}
-body
-    #container
+body(class='claro')
+  #container
+    #grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props='structure:layout')
 button
-    #dow-jones set NetPeek MSUs
+  #dow-jones set NetPeek MSUs
 button
-    #timed-notifications Start
+  #timed-notifications Start
