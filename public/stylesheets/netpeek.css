@@ -11,13 +11,18 @@ background: white;
 color: #333;
 }
 
+#grid {
+width: 40em;
+height: 10em;
+}
+
 button {
 -webkit-transition: background-color 0.2s linear;
 border-radius:4px;
 -moz-border-radius: 4px 4px 4px 4px;
 -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 background-color: #E4F2FF;
-background-image: url("http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/form/images/button.png");
+background-image: url("http://ajax.googleapis.com/ajax/libs/dojo/1/dijit/themes/claro/form/images/button.png");
 background-position: center top;
 background-repeat: repeat-x;
 border: 1px solid #769DC0;
