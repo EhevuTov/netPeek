@@ -13,7 +13,7 @@ var layout = [
 
 dojo.ready( function() {
 
-  var storetest = new dojo.data.ItemFileWriteStore({
+  var storeTest = new dojo.data.ItemFileWriteStore({
     data: {
         identifier: "id",
         items: [
@@ -25,7 +25,7 @@ dojo.ready( function() {
         ]
     }
   });
-  dijit.byId('grid').setStore(storetest);
+  dijit.byId('grid').setStore(storeTest);
 
   var store;
   // Socket.IO connection
@@ -37,7 +37,7 @@ dojo.ready( function() {
 
   //create the store with the data
   msuStore = new dojo.store.Memory({data: store});
-  // wrap the store with Observable to make it possible to monitor:
+  // wrap the store with Observable to make it possible to monitor
   msuStore = dojo.store.Observable(msuStore);
 
 });
