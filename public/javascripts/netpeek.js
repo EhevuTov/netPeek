@@ -1,8 +1,8 @@
 dojo.require( "dojo.parser");
 dojo.require( "dojo.store.Memory" );
 dojo.require( "dojo.store.Observable" );
-dojo.require( "dojox.grid.DataGrid" );
 dojo.require( "dojo.data.ItemFileWriteStore" );
+dojo.require( "dojox.grid.DataGrid" );
 
 var msuStore;
 
@@ -12,16 +12,27 @@ var layout = [
 ];
 
 dojo.ready( function() {
+  // init needed to begin program after successful loading
+  // run loading icon for start of program
+  var n = dojo.byId("preLoader");
+  dojo.fadeOut({
+      node:n,
+      duration:720,
+      onEnd:function(){
+          // dojo._destroyElement(n);
+          dojo.style(n,"display","none");
+      }
+  }).play();
 
   var storeTest = new dojo.data.ItemFileWriteStore({
     data: {
         identifier: "id",
         items: [
-            {id: 1, date: '2010-01-01'},
-            {id: 2, date: '2011-03-04'},
-            {id: 3, date: '2011-03-08'},
-            {id: 4, date: '2007-02-14'},
-            {id: 5, date: '2008-12-26'}
+            {'id': 1, phone:'324-432-1235', function:'init', point:'23.45.43', length: 45435},
+            {'id': 2, phone:'324-432-1254', function:'init', point:'23.45.43', length: 44335},
+            {'id': 3, phone:'324-432-1298', function:'init', point:'23.45.43', length: 67345},
+            {'id': 4, phone:'324-432-1212', function:'init', point:'23.45.43', length: 98342},
+            {'id': 5, phone:'324-432-1234', function:'init', point:'23.45.43', length: 34324},
         ]
     }
   });
