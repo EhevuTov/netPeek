@@ -1,18 +1,20 @@
 !!! 5
 html(lang="en")
   head
+    meta(charset="utf-8")
     title= title
-    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dijit/themes/claro/claro.css')
-    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dojox/grid/resources/Grid.css')
-    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/dojo/1/dojox/grid/resources/claroGrid.css')
     link(rel='stylesheet', href='/stylesheets/netpeek.css')
     script(src='http://ajax.googleapis.com/ajax/libs/dojo/1/dojo/dojo.xd.js', data-dojo-config='parseOnLoad: true')
     script(src='/javascripts/socket.io/socket.io.js')
     script(src='/javascripts/netpeek.js')
   body(class='claro')
+    #preLoader(data-dojo-id='preLoader')
     p Welcome to #{title}
     table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props='autoWidth:true')
       thead
         tr
           th(data-dojo-props='field:id')#id id
-          th(data-dojo-props='field:date')#date date
+          th(data-dojo-props='field:phone')#phone phone
+          th(data-dojo-props='field:function')#function function
+          th(data-dojo-props='field:point')#point point
+          th(data-dojo-props='field:length')#length length
