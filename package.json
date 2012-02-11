@@ -2,8 +2,13 @@
     "name": "NetPeek"
   , "version": "0.1.0"
   , "private": true
+  , "repository": { "type": "git", "url": "https://github.com/EhevuTov/netPeek.git"}
   , "dependencies": {
-      "express": "2.4.6"
+      "express": ">=2.4.x"
     , "jade": ">= 0.0.1"
   }
+  , "devDependencies": {
+      "vows": ">= 0.5.x"
+  }
+  , "engine": "node >= 0.4.x"
 }
