@@ -4,17 +4,22 @@ html(lang="en")
     meta(charset="utf-8")
     title= title
     link(rel='stylesheet', href='/stylesheets/netpeek.css')
-    script(src='http://ajax.googleapis.com/ajax/libs/dojo/1/dojo/dojo.xd.js', data-dojo-config='parseOnLoad: true')
+    script(src='http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js', data-dojo-config='parseOnLoad: true')
     script(src='/javascripts/socket.io/socket.io.js')
     script(src='/javascripts/netpeek.js')
   body(class='claro')
     #preLoader(data-dojo-id='preLoader')
-    p Welcome to #{title}
-    table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props='autoWidth:true')
-      thead
-        tr
-          th(data-dojo-props='field:id')#id id
-          th(data-dojo-props='field:phone')#phone phone
-          th(data-dojo-props='field:function')#function function
-          th(data-dojo-props='field:point')#point point
-          th(data-dojo-props='field:length')#length length
+    div(data-dojo-type='dijit.layout.BorderContainer', style='width: 98%; height: 98%')
+      div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'leading', splitter:true", style='width: 80%')
+        table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props='autoWidth:true')
+          thead
+            tr
+              th(data-dojo-props='field:id')#id id
+              th(data-dojo-props='field:phone')#phone phone
+              th(data-dojo-props='field:function')#function function
+              th(data-dojo-props='field:point')#point point
+              th(data-dojo-props='field:length')#length length
+      div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'center'", data-dojo-id='centerPane')
+        p Welcome to #{title}
+      div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'bottom'", data-dojo-id='bottomPane')
+        a(class="right", href="http://validator.w3.org/check?uri=http://aliyah.homeunix.org/~james/ecocipher") Valid XHTML
