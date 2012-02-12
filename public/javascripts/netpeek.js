@@ -2,14 +2,11 @@ dojo.require( "dojo.parser");
 dojo.require( "dojo.store.Memory" );
 dojo.require( "dojo.store.Observable" );
 dojo.require( "dojo.data.ItemFileWriteStore" );
+dojo.require( "dijit.layout.BorderContainer" );
+dojo.require( "dijit.layout.ContentPane" );
 dojo.require( "dojox.grid.DataGrid" );
 
 var msuStore;
-
-var layout = [
-  {name: 'Index', field: 'id'},
-  {name: 'Date', field: 'date', width: 10}
-];
 
 dojo.ready( function() {
   // init needed to begin program after successful loading
