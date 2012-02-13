@@ -35,17 +35,20 @@ dojo.ready( function() {
   });
   dijit.byId('grid').setStore(storeTest);
 
-  var store;
-  // Socket.IO connection
-  var socket = io.connect( 'http://localhost' );
-  socket.on( 'msu', function(data) {
-    console.log(data);
-    store = data;
-  });
-
   //create the store with the data
   msuStore = new dojo.store.Memory({data: store});
   // wrap the store with Observable to make it possible to monitor
   msuStore = dojo.store.Observable(msuStore);
+
+  var store;
+  // Socket.IO connection
+  var socket = io.connect( 'http://localhost' );
+  var i = 6;
+  socket.on( 'msu', function(data) {
+    console.log(data);
+    store = data;
+  storeTest.newItem({'id': i, phone:'324-432-1234', function:'init', point:'23.45.43', length: 34324}) 
+  i++;
+  });
 
 });
