@@ -11,7 +11,7 @@ html(lang="en")
     #preLoader(data-dojo-id='preLoader')
     div(data-dojo-type='dijit.layout.BorderContainer', style='width: 98%; height: 98%')
       div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'leading', splitter:true", style='width: 80%')
-        table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props='autoWidth:true')
+        table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props="autoWidth:true, autoHeight:true")
           thead
             tr
               th(data-dojo-props='field:id')#id id
