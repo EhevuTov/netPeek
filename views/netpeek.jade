@@ -11,16 +11,24 @@ html(lang="en")
     #preLoader(data-dojo-id='preLoader')
     div(data-dojo-type='dijit.layout.BorderContainer', style='width: 98%; height: 98%')
       div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'leading', splitter:true", style='width: 80%')
-        table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props="autoWidth:true, autoHeight:true")
-          thead
-            tr
-              th(data-dojo-props='field:id')#id id
-              th(data-dojo-props='field:phone')#phone phone
-              th(data-dojo-props='field:function')#function function
-              th(data-dojo-props='field:point')#point point
-              th(data-dojo-props='field:length')#length length
+        div(data-dojo-type='dijit.layout.TabContainer', style="width:100%; height:100%)
+          div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="title:'Grid'")
+            table#grid(data-dojo-type='dojox.grid.DataGrid', data-dojo-props="autoWidth:true, autoHeight:true")
+              thead
+                tr
+                  th(data-dojo-props='field:id')#id id
+                  th(data-dojo-props='field:phone')#phone phone
+                  th(data-dojo-props='field:function')#function function
+                  th(data-dojo-props='field:point')#point point
+                  th(data-dojo-props='field:length')#length length
+          div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="title:'Gauge'", style='width: 80%')
       div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'center'", data-dojo-id='centerPane')
-        p Welcome to #{title}
+        div(data-dojo-type='dijit.layout.TabContainer', style="width:100%; height:100%)
+          div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="title:'Main'")
+            p Welcome to #{title}
+          div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="title:'Filters'")
       div(data-dojo-type='dijit.layout.ContentPane', data-dojo-props="region:'bottom'", data-dojo-id='bottomPane')
+        div(class="left")
+          #{title}
         div(class="right", style='width: 1.8em; height: 1.8em')
           object(data="http://www.w3.org/html/logo/downloads/HTML5_Badge.svg", type="image/svg+xml", style='width: 98%; height: 98%')

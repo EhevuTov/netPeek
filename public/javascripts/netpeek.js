@@ -3,6 +3,7 @@ dojo.require( "dojo.store.Memory" );
 dojo.require( "dojo.store.Observable" );
 dojo.require( "dojo.data.ItemFileWriteStore" );
 dojo.require( "dijit.layout.BorderContainer" );
+dojo.require( "dijit.layout.TabContainer" );
 dojo.require( "dijit.layout.ContentPane" );
 dojo.require( "dojox.grid.DataGrid" );
 
