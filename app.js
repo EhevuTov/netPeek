@@ -74,4 +74,5 @@ io.sockets.on( 'connection', function (socket) {
 process.on( 'SIGINT', function() {
   console.log( "\ngracefully shutting down from SIGINT (Ctrl-C)" )
   sub.close()
+  process.exit()
 })

@@ -19,4 +19,5 @@ process.on( 'SIGINT', function() {
   console.log( "\ngracefully shutting down from  SIGINT (Crtl-C)" )
   clearInterval(idInterval)
   publisher.close()
+  process.exit( )
 })
