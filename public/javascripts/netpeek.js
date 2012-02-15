@@ -1,15 +1,19 @@
-dojo.require( "dojo.parser");
-dojo.require( "dojo.store.Memory" );
-dojo.require( "dojo.store.Observable" );
-dojo.require( "dojo.data.ItemFileWriteStore" );
-dojo.require( "dijit.layout.BorderContainer" );
-dojo.require( "dijit.layout.TabContainer" );
-dojo.require( "dijit.layout.ContentPane" );
-dojo.require( "dojox.grid.DataGrid" );
-
 var msuStore;
 
-dojo.ready( function() {
+require([
+    "dojo/dom"
+  , "dojo/parser"
+  , "dojo/store/Memory"
+  , "dojo/store/Observable"
+  , "dojo/data/ItemFileWriteStore"
+  , "dijit/layout/BorderContainer"
+  , "dijit/layout/TabContainer"
+  , "dijit/layout/ContentPane"
+  , "dojox/grid/DataGrid"
+  , "dojo/domReady!"]
+  , function() {dojo.ready( ready ) } ) // the callback function to run when done asynchronously
+
+function ready() {
     // init needed to begin program after successful loading
     // run loading icon for start of program
     var n = dojo.byId("preLoader");
@@ -17,7 +21,6 @@ dojo.ready( function() {
 node:n,
 duration:720,
 onEnd:function(){
-// dojo._destroyElement(n);
 dojo.style(n,"display","none");
 }
 }).play();
@@ -66,4 +69,4 @@ var i = 6;
   dojo.connect( dojo.byId( 'startPeek' ), 'click', socket_start)
   dojo.connect( dojo.byId( 'stopPeek' ), 'click', socket_stop)
 
-});
+};
