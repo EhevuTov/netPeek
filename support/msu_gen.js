@@ -1,6 +1,6 @@
-zmq = require( 'zeromq' )
+zmq = require( 'zmq' )
 
-publisher = zmq.createSocket( 'pub' )
+publisher = zmq.socket( 'pub' )
 
 console.log( "connecting..." )
 publisher.bindSync( "tcp://*:5000" )

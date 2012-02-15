@@ -6,7 +6,8 @@
   , "dependencies": {
       "express": ">=2.4.x"
     , "jade": ">= 0.0.1"
-    , "zmq": ">= 0.0.1"
+    , "socket.io": ">= 0.8.x"
+    , "zmq": ">= 2.x.x"
   }
   , "devDependencies": {
       "vows": ">= 0.5.x"

@@ -1,7 +1,7 @@
 // Module dependencies
 
 var express = require( 'express' )
-var zmq     = require( 'zeromq' )
+var zmq     = require( 'zmq' )
 var app     = module.exports = express.createServer()
 var io      = require( 'socket.io' ).listen(app)
 
@@ -57,7 +57,7 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 // ZeroMQ MSU Subscriber
 console.log( "Subscribing..." )
-sub = zmq.createSocket( 'sub' )
+sub = zmq.socket( 'sub' )
 sub.connect( "tcp://localhost:5000" )
 
 // ZeroMQ set subscribe to all incoming
